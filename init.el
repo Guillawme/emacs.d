@@ -3,6 +3,9 @@
 ;; Init file in charge of loading everything else
 
 
+(add-to-list 'load-path "~/.emacs.d/config")
+
+
 ;; User identity
 (load "user-identity")
 
@@ -12,8 +15,6 @@
 
 
 ;; Load parameter files
-
-(add-to-list 'load-path "~/.emacs.d/config")
 
 (load "pkg-parameters")
 (load "global-parameters")
