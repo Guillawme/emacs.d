@@ -4,7 +4,7 @@
 ;; Various useful global parameters
 
 (set-language-environment "UTF-8")
-(prefer-coding-system 'utf-8)
+(prefer-coding-system 'utf-8-unix)
 
 (column-number-mode 1)
 (line-number-mode 1)
