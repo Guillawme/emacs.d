@@ -4,4 +4,5 @@
 
 (bind-key "C-c =" "≃")
 (bind-key "C-c a" "Å")
+(bind-key "C-c +" "±")
 
