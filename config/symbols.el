@@ -5,5 +5,5 @@
 (bind-key "C-c =" "≃")
 (bind-key "C-c a" "Å")
 (bind-key "C-c p" "±")
-(bind-key "C-c i" "í")
+;(bind-key "C-c i" "í")
 
