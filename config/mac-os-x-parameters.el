@@ -3,7 +3,7 @@
 
 ;; Parameters activated only on Mac OS X
 
-(add-to-list 'default-frame-alist '(height . 50))
+(add-to-list 'default-frame-alist '(height . 55))
 (add-to-list 'default-frame-alist '(width . 100))
 
 (exec-path-from-shell-initialize)
