@@ -10,7 +10,7 @@
 ;; Load symbols shortcuts
 (load "symbols")
 
-;; Bind user-defined commands from ~/.emacs.d/config/gg-functions.el to
+;; Bind user-defined commands from ~/.emacs.d/config/my-functions.el to
 ;; convenient keyboard shortcuts
 
 (bind-key "C-c i d" 'my-insert-date)
@@ -62,5 +62,4 @@
                 (lambda ()
                   (interactive)
                   (ignore-errors (backward-char 5))))
-
 

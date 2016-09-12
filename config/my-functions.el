@@ -1,6 +1,5 @@
 ;; Emacs configuration
 
-
 ;; Some useful commands to be called by keybindings set in
 ;; ~/.emacs.d/config/keybindings.el
 
