@@ -13,8 +13,13 @@
 (setq-default mac-control-modifier 'super)
 (setq-default ns-function-modifier 'hyper)
 
+;; Enable right-click to get spell-checking suggestions
+(eval-after-load "flyspell"
+  '(progn
+     (define-key flyspell-mouse-map [down-mouse-3] #'flyspell-correct-word)
+     (define-key flyspell-mouse-map [mouse-3] #'undefined)))
 
-;; Enables convenient shortcuts to type brackets
+;; Enable convenient shortcuts to type brackets
 ;; with a French MacBook Pro keyboard
 
 ;; Use bind-key utility
@@ -35,5 +40,4 @@
 (bind-key "C-M-)" '(lambda () (interactive) (insert "}"))) ;; closing curly bracket
 (bind-key "C-:" '(lambda () (interactive) (insert "\\"))) ;; backslash
 (bind-key "C-!" '(lambda () (interactive) (insert "|"))) ;; pipe
-
 

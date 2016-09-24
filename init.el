@@ -15,6 +15,7 @@
 (load "pkg-parameters")
 (load "global-parameters")
 (load "backup-parameters")
+(load "spellchecker-parameters")
 (load "text-mode-parameters")
 (load "prog-mode-parameters")
 (load "custom-parameters")

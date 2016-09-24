@@ -19,6 +19,9 @@
 ;(wc-goal-modeline-format "WC[%tw]") ;; this line is in custom-parameters.el, causes bug here
 (add-hook 'text-mode-hook 'wc-goal-mode)
 
+;; Turn on live spell-checking
+(add-hook 'text-mode-hook 'flyspell-mode)
+
 ;; Turn on auto-fill-mode
 (add-hook 'text-mode-hook 'turn-on-auto-fill)
 
@@ -30,5 +33,4 @@
 
 ;; Because pandoc reads double spaces as hard line breaks
 (setq-default sentence-end-double-space nil)
-
 
