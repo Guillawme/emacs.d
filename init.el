@@ -10,7 +10,7 @@
 ;; File to record paremeters set through the `customize' utility
 (setq-default custom-file "~/.emacs.d/config/custom-parameters.el")
 
-;; Load parameter files
+;; Load parameter files.
 (load "https")
 (load "pkg-parameters")
 (load "global-parameters")
@@ -22,6 +22,7 @@
 (load "my-functions")
 ;(load "pandoc-mode-functions")
 ;(load "collected-scripts")
+(load "eshell-parameters")
 (load "keybindings")
 
 ;; Load only when running on Mac OS X
