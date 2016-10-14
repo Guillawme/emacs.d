@@ -1,13 +1,13 @@
 ;; Emacs configuration
-;; Init file in charge of loading everything else
+;; Init file in charge of loading everything else.
 
 ;; All actual configuration files are in a `config' subdirectory
 (add-to-list 'load-path "~/.emacs.d/config")
 
-;; Set user identity (full name and email address)
+;; Set user identity (full name and email address).
 (load "user-identity")
 
-;; File to record paremeters set through the `customize' utility
+;; File to record paremeters set through the `customize' utility.
 (setq-default custom-file "~/.emacs.d/config/custom-parameters.el")
 
 ;; Load parameter files.
@@ -25,11 +25,11 @@
 (load "eshell-parameters")
 (load "keybindings")
 
-;; Load only when running on Mac OS X
+;; Load only when running on Mac OS X.
 (when (memq window-system '(mac ns))
   (load "mac-os-x-parameters"))
 
-;; Load only when running on Windows
+;; Load only when running on Windows.
 (when (memq window-system '(w32 pc))
   (load "ms-windows-parameters"))
 
