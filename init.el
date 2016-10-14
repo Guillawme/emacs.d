@@ -1,7 +1,7 @@
 ;; Emacs configuration
 ;; Init file in charge of loading everything else.
 
-;; All actual configuration files are in a `config' subdirectory
+;; All actual configuration files are in a `config' subdirectory.
 (add-to-list 'load-path "~/.emacs.d/config")
 
 ;; Set user identity (full name and email address).
@@ -9,6 +9,8 @@
 
 ;; File to record paremeters set through the `customize' utility.
 (setq-default custom-file "~/.emacs.d/config/custom-parameters.el")
+
+(package-initialize)
 
 ;; Load parameter files.
 (load "https-parameters")
