@@ -11,7 +11,7 @@
 (setq-default custom-file "~/.emacs.d/config/custom-parameters.el")
 
 ;; Load parameter files.
-(load "https")
+(load "https-parameters")
 (load "pkg-parameters")
 (load "global-parameters")
 (load "backup-parameters")
