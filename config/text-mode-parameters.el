@@ -20,7 +20,7 @@
 (add-hook 'text-mode-hook 'wc-goal-mode)
 
 ;; Turn on live spell-checking
-(add-hook 'text-mode-hook 'flyspell-mode)
+;(add-hook 'text-mode-hook 'flyspell-mode)
 
 ;; Turn on auto-fill-mode
 (add-hook 'text-mode-hook 'turn-on-auto-fill)
