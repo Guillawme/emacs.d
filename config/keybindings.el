@@ -16,6 +16,7 @@
 (bind-key "C-c i d" 'my-insert-date)
 (bind-key "C-c i t" 'my-insert-time)
 (bind-key "C-x 2" 'my-split-window-vertically)
+(bind-key "C-x 3" 'my-split-window-horizontally)
 
 ;; Bind useful commands to convenient keyboard shortcuts
 

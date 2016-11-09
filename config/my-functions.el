@@ -16,3 +16,8 @@
   (split-window-vertically)
   (set-window-buffer (next-window) (other-buffer)))
 
+(defun my-split-window-horizontally ()
+  (interactive)
+  (split-window-horizontally)
+  (set-window-buffer (next-window) (other-buffer)))
+
