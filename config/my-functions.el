@@ -11,4 +11,8 @@
   (interactive)
   (insert (format-time-string "%X")))
 
+(defun my-split-window-vertically ()
+  (interactive)
+  (split-window-vertically)
+  (set-window-buffer (next-window) (other-buffer)))
 
