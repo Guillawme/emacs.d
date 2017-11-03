@@ -33,6 +33,7 @@
 ;(load "collected-scripts")
 (load "eshell-parameters")
 (load "keybindings")
+(load "org-mode-parameters")
 
 ;; Load only when running on Mac OS X.
 (when (memq window-system '(mac ns))
