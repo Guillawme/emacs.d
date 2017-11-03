@@ -1,6 +1,9 @@
 # Private data
 user-identity.el
 
+# File automatically generated
+cacert.pem
+
 # Compiled
 *.elc
 
