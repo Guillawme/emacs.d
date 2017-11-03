@@ -5,6 +5,7 @@
 
 (set-language-environment "UTF-8")
 (prefer-coding-system 'utf-8-unix)
+(setq-default default-input-method 'latin-1-prefix)
 
 (column-number-mode 1)
 (line-number-mode 1)
