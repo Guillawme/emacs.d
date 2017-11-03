@@ -25,7 +25,9 @@
 (bind-key "M-p" 'backward-paragraph)
 (bind-key "M-n" 'forward-paragraph)
 
-(bind-key "C-c c" (lambda () (interactive) (dired "~/.emacs.d/")))
+;; Open Emacs config directory. I rarely use this and might need the keybinding
+;; for something else...
+;(bind-key "C-c c" (lambda () (interactive) (dired "~/.emacs.d/")))
 
 
 ;; Unset M-p and M-n in markdown-mode, so they call instead backward-paragraph
@@ -38,8 +40,8 @@
 (unbind-key "M-n" markdown-mode-map)
 
 ;; New keybindings for markdown-next-link and markdown-previous-link
-(bind-key "C-c C-l n" 'markdown-next-link markdown-mode-map)
-(bind-key "C-c C-l p" 'markdown-previous-link markdown-mode-map)
+(bind-key "C-c l n" 'markdown-next-link markdown-mode-map)
+(bind-key "C-c l p" 'markdown-previous-link markdown-mode-map)
 
 
 ;; Move more quickly
