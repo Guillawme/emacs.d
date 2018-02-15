@@ -15,7 +15,7 @@
 
 (tool-bar-mode -1)
 (menu-bar-mode 1)
-(scroll-bar-mode 1)
+(scroll-bar-mode -1)
 (tooltip-mode 1)
 (blink-cursor-mode -1)
 
@@ -30,9 +30,16 @@
 
 (setq-default require-final-newline t)
 
+;; Highlight and match parenthesis automatically
 (setq-default blink-matching-paren t)
 (show-paren-mode 1)
-(electric-pair-mode 0)
+(setq-default show-paren-style 'mixed)
+(setq-default show-paren-when-point-inside-paren t)
+(electric-pair-mode nil)
+(setq-default electric-pair-preserve-balance t)
+(setq-default electric-pair-delete-adjacent-pairs t)
+(setq-default electric-pair-open-newline-between-pairs t)
+(setq-default electric-pair-skip-whitespace t)
 
 (desktop-save-mode 1)
 
@@ -42,7 +49,7 @@
 
 (setq-default inhibit-startup-screen t)
 
-;;(setq-default scroll-preserve-screen-position 1)
+(setq-default scroll-preserve-screen-position t)
 
 ;; Move to trash instead of deleting files
 (setq-default delete-by-moving-to-trash t)
