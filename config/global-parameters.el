@@ -54,4 +54,8 @@
 ;; Move to trash instead of deleting files
 (setq-default delete-by-moving-to-trash t)
 
+;; Always use which-key
+(require 'which-key)
+(which-key-mode)
+(which-key-setup-side-window-right-bottom)
 
