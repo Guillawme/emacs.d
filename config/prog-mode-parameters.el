@@ -1,13 +1,11 @@
 ;; Emacs configuration
 
 
-;; Useful parameters to edit code
-
+;; Number lines and highlight current line
 (add-hook 'prog-mode-hook 'linum-mode)
 (add-hook 'prog-mode-hook 'hl-line-mode)
 
-
-;; Use python3 as default python interpreter
-(setq-default python-python-command "python3")
-
+;; Make scripts executable on save
+(add-hook 'after-save-hook
+          'executable-make-buffer-file-executable-if-script-p)
 
