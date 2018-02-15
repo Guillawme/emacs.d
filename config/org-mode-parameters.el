@@ -14,6 +14,9 @@
 (setq-default org-special-ctrl-k t)
 (setq-default org-ctrl-k-protect-subtree 'ask)
 
+;; Require wrapping braces to interpret _ and ^ as sub/super-script.
+(setq org-export-with-sub-superscripts '{}) ; also #+OPTIONS: ^:{}
+
 (setq-default org-cycle-separator-lines 1)
 
 (setq-default org-catch-invisible-edits 'show)
