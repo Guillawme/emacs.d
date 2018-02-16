@@ -3,18 +3,25 @@
 
 (require 'package)
 
-;; Fix the repository list with HTTPS links.
+;; Set repository list with HTTPS links and priorities.
 (setq-default package-archives
-             '(("gnu" . "https://elpa.gnu.org/packages/")
-               ("melpa-stable" . "https://stable.melpa.org/packages/")
-               ("org" . "http://orgmode.org/elpa/")))
+              '(("gnu"          . "https://elpa.gnu.org/packages/")
+                ("melpa"        . "https://melpa.org/packages/")
+                ("melpa-stable" . "https://stable.melpa.org/packages/")
+                ("org"          . "https://orgmode.org/elpa/"))
+              package-archive-priorities
+              '(("gnu"          . 1)
+                ("melpa"        . 1)
+                ("melpa-stable" . 1)
+                ("org"          . 1)))
+(setq-default package-menu-hide-low-priority t)
+(setq-default package-menu--hide-packages t)
 
 (package-initialize)
 
 ;; Check signature when a package provides one, but don't block the installation
 ;; of unsigned packages.
 (setq-default package-check-signature 'allow-unsigned)
-;(setq-default package-check-signature 'nil)
 
 ;; Set a list of packages to be automatically installed if not present.
 ;; This ensures that all the configuration is movable to a new computer.
