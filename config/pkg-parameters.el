@@ -1,6 +1,6 @@
 ;; Emacs configuration
-;; Settings for `package.el'.
 
+;; Settings for `package.el'.
 (require 'package)
 
 ;; Set repository list with HTTPS links and priorities.

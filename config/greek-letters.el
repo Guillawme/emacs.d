@@ -1,6 +1,6 @@
 ;; Emacs configuration
 
-;; Set convenient shortcuts to enter greek letters
+;; Set convenient shortcuts to enter greek letters.
 
 (bind-key "M-g a" "α")
 (bind-key "M-g b" "β")
@@ -52,5 +52,4 @@
 (bind-key "M-g C" "Χ")
 (bind-key "M-g Y" "Ψ")
 (bind-key "M-g W" "Ω")
-
 

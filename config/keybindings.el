@@ -1,25 +1,22 @@
 ;; Emacs configuration
 
-
-;; Use bind-key utility
+;; Use bind-key utility.
 (require 'bind-key)
 
-;; Load greek letters shortcuts
+;; Load greek letters shortcuts.
 (load "greek-letters")
 
-;; Load symbols shortcuts
+;; Load symbols shortcuts.
 (load "symbols")
 
 ;; Bind user-defined commands from ~/.emacs.d/config/my-functions.el to
-;; convenient keyboard shortcuts
-
+;; convenient keyboard shortcuts.
 (bind-key "C-c i d" 'my-insert-date)
 (bind-key "C-c i t" 'my-insert-time)
 (bind-key "C-x 2" 'my-split-window-vertically)
 (bind-key "C-x 3" 'my-split-window-horizontally)
 
-;; Bind useful commands to convenient keyboard shortcuts
-
+;; Bind useful commands to convenient keyboard shortcuts.
 (bind-key "C-c o" 'bury-buffer)
 (bind-key "C-c k" 'kill-this-buffer)
 (bind-key "M-p" 'backward-paragraph)
@@ -29,22 +26,17 @@
 ;; for something else...
 ;(bind-key "C-c c" (lambda () (interactive) (dired "~/.emacs.d/")))
 
-
 ;; Unset M-p and M-n in markdown-mode, so they call instead backward-paragraph
-;; and forward-paragraph as defined above
-
-;; We first need to load markdown-mode to be able to modify markdown-mode-map
+;; and forward-paragraph as defined above.
+;; We first need to load markdown-mode to be able to modify markdown-mode-map.
 (require 'markdown-mode)
-
 (unbind-key "M-p" markdown-mode-map)
 (unbind-key "M-n" markdown-mode-map)
-
-;; New keybindings for markdown-next-link and markdown-previous-link
+;; New keybindings for markdown-next-link and markdown-previous-link.
 (bind-key "C-c l n" 'markdown-next-link markdown-mode-map)
 (bind-key "C-c l p" 'markdown-previous-link markdown-mode-map)
 
-
-;; Move more quickly
+;; Functions to move more quickly.
 
 (bind-key "C-S-n"
                 (lambda ()

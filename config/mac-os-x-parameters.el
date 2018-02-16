@@ -1,7 +1,6 @@
 ;; Emacs configuration
 
-
-;; Parameters activated only on Mac OS X
+;; Parameters activated only on macOS.
 
 (add-to-list 'default-frame-alist '(height . 53))
 (add-to-list 'default-frame-alist '(width . 100))
@@ -13,7 +12,7 @@
 (setq-default mac-control-modifier 'super)
 (setq-default ns-function-modifier 'hyper)
 
-;; Enable right-click to get spell-checking suggestions
+;; Enable right-click to get spell-checking suggestions.
 (eval-after-load "flyspell"
   '(progn
      (define-key flyspell-mouse-map [down-mouse-3] #'flyspell-correct-word)

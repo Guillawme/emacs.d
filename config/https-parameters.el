@@ -1,4 +1,5 @@
 ;; Emacs configuration
+
 ;; Settings to enforce verification of HTTPS connections.
 ;; Taken from <https://glyph.twistedmatrix.com/2015/11/editor-malware.html>.
 

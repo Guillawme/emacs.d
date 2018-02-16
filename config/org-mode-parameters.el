@@ -1,6 +1,6 @@
 ;; Emacs configuration
-;; Settings for Org-Mode
 
+;; Settings for Org-Mode.
 (require 'org)
 
 ;; These commands should be available from anywhere, not only Org buffer.

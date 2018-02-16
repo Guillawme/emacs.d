@@ -1,7 +1,6 @@
 ;; Emacs configuration
 
-
-;; Spell-checking parameters
+;; Spell-checking parameters.
 
 (setq-default ispell-program-name "aspell")
 (setq-default ispell-dictionary "english")
