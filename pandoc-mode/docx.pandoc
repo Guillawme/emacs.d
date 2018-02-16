@@ -1,7 +1,7 @@
 ;; -*- mode: emacs-lisp -*-
 
 ;; pandoc-mode global settings file
-;; saved on 2015.03.04 16:08
+;; saved on 2018.02.16 14:14
 
 ((html-q-tags)
  (no-tex-ligatures)
@@ -20,13 +20,13 @@
  (self-contained)
  (incremental)
  (gladtex)
- (smart . t)
+ (smart)
  (parse-raw)
  (reference-links)
  (normalize)
  (strict)
  (preserve-tabs)
- (standalone)
+ (standalone . t)
  (read . "markdown")
  (read-lhs)
  (read-extensions
@@ -129,10 +129,10 @@
   ("tex_math_double_backslash")
   ("tex_math_single_backslash")
   ("yaml_metadata_block"))
- (output)
+ (output . t)
  (data-dir)
  (extract-media)
- (output-dir)
+ (output-dir . "")
  (master-file)
  (template)
  (css)

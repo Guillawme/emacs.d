@@ -10,11 +10,11 @@
 ;; See http://joostkremers.github.io/pandoc-mode/#using--directives
 ;; Define functions here, don't forget to add them to pandoc-directives list
 
-(defun pandoc-current-date (output-format &optional text)
+(defun my-pandoc-current-date (output-format &optional text)
   (format "%s%s" (if text (concat text ", ") "")
                  (format-time-string "%d %b %Y")))
 
-(defun pandoc-current-time (output-format)
+(defun my-pandoc-current-time (output-format)
   (format-time-string "%H:%M"))
 
 
@@ -22,7 +22,6 @@
 ;; This enables pandoc-mode to use those functions with
 ;; a call to the associated directive in the processed file
 
-(add-to-list 'pandoc-directives '("date" . pandoc-current-date))
-(add-to-list 'pandoc-directives '("time" . pandoc-current-time))
-
+(add-to-list 'pandoc-directives '("date" . my-pandoc-current-date))
+(add-to-list 'pandoc-directives '("time" . my-pandoc-current-time))
 
