@@ -5,30 +5,74 @@
 ;; Open new buffers in text-mode.
 (setq-default major-mode 'text-mode)
 
-;; Turn on  markdown-mode and pandoc-mode when opening .md files.
-(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
-(add-hook 'markdown-mode-hook 'pandoc-mode)
-
-;; Turn on visual-line-mode (useful to edit line break-sensitive
-;; files for which auto-fill-mode should be turned off)
-;(add-hook 'text-mode-hook 'visual-line-mode)
-
-;; Turn on word count mode and display total number of words in modeline.
-(require 'wc-goal-mode)
-;(wc-goal-modeline-format "WC[%tw]") ;; this line is in custom-parameters.el, causes bug here
-(add-hook 'text-mode-hook 'wc-goal-mode)
-
-;; Turn on live spell-checking.
-;(add-hook 'text-mode-hook 'flyspell-mode)
-
-;; Turn on auto-fill-mode and set useful parameters for auto-fill-mode.
-(add-hook 'text-mode-hook 'turn-on-auto-fill)
-(setq-default fill-column 80)
-(add-hook 'fill-nobreak-predicate 'fill-french-nobreak-p)
-(add-hook 'fill-nobreak-predicate 'fill-single-word-nobreak-p)
-(add-hook 'fill-nobreak-predicate 'fill-single-char-nobreak-p)
-
 ;; Because pandoc reads double spaces as hard line breaks, don't use double
 ;; spaces as sentence delimiters.
 (setq-default sentence-end-double-space nil)
+
+;; Turn on  markdown-mode when opening .md files.
+(use-package markdown-mode
+  :ensure t
+  :mode "\\.md\\'"
+  :config
+  (unbind-key "M-p" markdown-mode-map)
+  (unbind-key "M-n" markdown-mode-map)
+  :bind
+  (:map markdown-mode-map
+        ("C-c l n" . markdown-next-link)
+        ("C-c l p" . markdown-previous-link)))
+
+;; Turn on pandoc-mode when working in text-mode buffers.
+(use-package pandoc-mode
+  :ensure t
+  :config
+  ;; Functions to be used by pandoc-mode directives. See
+  ;; http://joostkremers.github.io/pandoc-mode/#using--directives
+  (defun my-pandoc-current-date (output-format &optional text)
+    (format "%s%s" (if text (concat text ", ") "")
+            (format-time-string "%d %b %Y")))
+  (defun my-pandoc-current-time (output-format)
+    (format-time-string "%H:%M"))
+  (add-to-list 'pandoc-directives '("date" . my-pandoc-current-date))
+  (add-to-list 'pandoc-directives '("time" . my-pandoc-current-time))
+  :hook
+  (markdown-mode text-mode org-mode))
+
+;; Turn on visual-line-mode (useful to edit line break-sensitive
+;; files for which auto-fill-mode should be turned off)
+;; (add-hook 'text-mode-hook 'visual-line-mode)
+
+;; Turn on word count mode and display total number of words in modeline.
+(use-package wc-goal-mode
+  :ensure t
+  :custom
+  (wc-goal-modeline-format "WC[%tw]")
+  :hook
+  (markdown-mode text-mode org-mode))
+
+;; Turn on auto-fill-mode and set useful parameters for
+;; auto-fill-mode. Use it automatically when working in text-mode
+;; buffers.
+(use-package auto-fill-mode
+  :init
+  (setq-default fill-column 80)
+  :config
+  (add-hook 'fill-nobreak-predicate 'fill-french-nobreak-p)
+  (add-hook 'fill-nobreak-predicate 'fill-single-word-nobreak-p)
+  (add-hook 'fill-nobreak-predicate 'fill-single-char-nobreak-p)
+  :hook
+  (markdown-mode text-mode org-mode))
+
+;; Spell-checking parameters.
+(use-package flyspell-mode
+  :config
+  (setq-default ispell-program-name "aspell"
+                ispell-dictionary "english"
+                ispell-extra-args '("--sug-mode=normal"))
+  :bind
+  ;; Enable right-click to get spell-checking suggestions.
+  (:map flyspell-mouse-map
+        ([down-mouse-2] . flyspell-correct-word)
+        ([mouse-2] . undefined))
+  :hook
+  (markdown-mode text-mode org-mode))
 

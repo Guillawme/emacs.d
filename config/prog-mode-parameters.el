@@ -3,10 +3,14 @@
 ;; Useful settings for programming modes.
 
 ;; Number lines and highlight current line.
-(add-hook 'prog-mode-hook 'linum-mode)
-(add-hook 'prog-mode-hook 'hl-line-mode)
+(use-package linum-mode
+  :hook prog-mode)
+(use-package hl-line-mode
+  :hook prog-mode)
 
 ;; Make scripts executable on save.
-(add-hook 'after-save-hook
-          'executable-make-buffer-file-executable-if-script-p)
+(use-package prog-mode
+  :config
+  (add-hook 'after-save-hook
+            'executable-make-buffer-file-executable-if-script-p))
 

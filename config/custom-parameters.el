@@ -6,8 +6,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (auctex which-key org wc-goal-mode pandoc-mode markdown-mode exec-path-from-shell cm-mode bind-key)))
- '(wc-goal-modeline-format "WC[%tw]"))
+    (org-plus-contrib wc-goal-mode pandoc-mode markdown-mode ivy-hydra counsel which-key exec-path-from-shell diminish use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

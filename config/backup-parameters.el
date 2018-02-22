@@ -4,8 +4,8 @@
 
 ;; Auto-save after 20 seconds of inactivity, or after 200 characters typed, if
 ;; the buffer is modified.
-(setq-default auto-save-timeout 20)
-(setq-default auto-save-interval 200)
+(setq-default auto-save-timeout 20
+              auto-save-interval 200)
 
 ;; Save all backup files in a central directory, to prevent cluttering normal
 ;; working directories.

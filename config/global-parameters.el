@@ -8,46 +8,50 @@
 (setq-default default-input-method 'latin-1-prefix)
 
 ;; Interface customizations.
-(setq-default inhibit-startup-screen t)
-(setq-default scroll-preserve-screen-position t)
+(add-to-list 'default-frame-alist '(height . 53))
+(add-to-list 'default-frame-alist '(width . 100))
+(setq-default inhibit-startup-screen t
+              scroll-preserve-screen-position t
+              display-time-24hr-format t
+              confirm-nonexistent-file-or-buffer nil)
 (column-number-mode 1)
 (line-number-mode 1)
 (display-time-mode t)
-(setq-default display-time-24hr-format t)
 (tool-bar-mode -1)
 (menu-bar-mode 1)
 (scroll-bar-mode -1)
 (tooltip-mode 1)
 (blink-cursor-mode -1)
 (fset 'yes-or-no-p 'y-or-n-p)
-(setq-default confirm-nonexistent-file-or-buffer nil)
 
 ;; Allow killing of read-only text, and don't clutter the kill-ring
 ;; with duplicates.
-(setq-default kill-read-only-ok t)
-(setq-default kill-do-not-save-duplicates t)
+(setq-default kill-read-only-ok t
+              kill-do-not-save-duplicates t)
 
 ;; Don't use tabs to indent, but maintain correct appearance (8 spaces).
-(setq-default indent-tabs-mode nil)
-(setq-default tab-width 8)
-
-;; Append a new line at end of files on save.
-(setq-default require-final-newline t)
+(setq-default indent-tabs-mode nil
+              tab-width 8
+              ;; Append a new line at the end of files on save.
+              require-final-newline t)
 
 ;; Highlight and match parenthesis automatically
+(show-paren-mode)
+(setq-default show-paren-style 'mixed
+              show-paren-when-point-inside-paren t)
 (setq-default blink-matching-paren t)
-(show-paren-mode 1)
-(setq-default show-paren-style 'mixed)
-(setq-default show-paren-when-point-inside-paren t)
-(electric-pair-mode nil)
-(setq-default electric-pair-preserve-balance t)
-(setq-default electric-pair-delete-adjacent-pairs t)
-(setq-default electric-pair-open-newline-between-pairs t)
-(setq-default electric-pair-skip-whitespace t)
+(electric-pair-mode)
+(setq-default electric-pair-preserve-balance t
+              electric-pair-delete-adjacent-pairs t
+              electric-pair-open-newline-between-pairs t
+              electric-pair-skip-whitespace t)
 
-;; Always save session (mostly to get all buffers re-opened next time Emacs
-;; starts up).
+;; Always save session (mostly to get all buffers re-opened next time
+;; Emacs starts up).
 (desktop-save-mode 1)
+;; Only restore 5 buffers on startup, the others will be restored
+;; lazily when needed or when Emacs is idle.
+;; (setq-default desktop-restore-eager 5)
 
 ;; Enable change region case commands
 (put 'upcase-region 'disabled nil)
@@ -57,7 +61,10 @@
 (setq-default delete-by-moving-to-trash t)
 
 ;; Always use which-key
-(require 'which-key)
-(which-key-mode)
-(which-key-setup-side-window-right-bottom)
+(use-package which-key
+  :ensure t
+  :diminish which-key-mode
+  :config
+  (which-key-mode)
+  (which-key-setup-side-window-right-bottom))
 
