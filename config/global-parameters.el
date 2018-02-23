@@ -58,7 +58,16 @@
 (put 'downcase-region 'disabled nil)
 
 ;; Move to trash instead of deleting files
+(use-package osx-trash
+  :if (eq system-type 'darwin)
+  :ensure t
+  :config
+  (osx-trash-setup))
 (setq-default delete-by-moving-to-trash t)
+;; Alternative way without needing an extra package. The downside is that it
+;; does the same as `mv', i.e. the Trash won't offer the "Put back" option.
+;; (when (eq system-type 'darwin)
+;;   (setq-default trash-directory "~/.Trash"))
 
 ;; Always use which-key
 (use-package which-key
