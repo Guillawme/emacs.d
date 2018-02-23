@@ -45,7 +45,7 @@
 ;; of the signature checking policy enforced by
 ;; `package-check-signature' above).
 (use-package exec-path-from-shell
-  :if (memq window-system '(mac ns x))
+  :if (memq system-type '(darwin gnu/linux))
   :ensure t
   :config
   (exec-path-from-shell-initialize))

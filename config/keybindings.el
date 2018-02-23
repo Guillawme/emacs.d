@@ -1,7 +1,7 @@
 ;; Emacs configuration
 
 ;; Modifier keys on macOS.
-(when (memq window-system '(mac ns))
+(when (eq system-type 'darwin)
   (setq-default mac-command-modifier 'meta
                 mac-option-modifier  'control
                 mac-control-modifier 'super
