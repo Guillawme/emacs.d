@@ -22,7 +22,18 @@
 ;; curl --remote-name --time-cond cacert.pem https://curl.haxx.se/ca/cacert.pem
 ;; This will download an up-to-date copy of the Mozilla CA certificate bundle,
 ;; kindly provided in the correct format (PEM) by the cURL developpers.
-(setq-default gnutls-trustfiles (list "/Users/guillaume/emacs.d/cacert.pem"))
+;; In case we cannot get this file, abort loading the configuration. In no
+;; circumstance we should allow unverified HTTPS connections.
+(unless (file-exists-p "~/.emacs.d/update-cacert.sh")
+  (error "File not found: ~/.emacs.d/update-cacert.sh"))
+(unless (file-executable-p "~/.emacs.d/update-cacert.sh")
+  ;; The following doesn't work when ~/.emacs.d/update-cacert.pem is a symlink to
+  ;; the actual location of the script...
+  ;; (progn (message "Making file executable: ~/.emacs.d/update-cacert.sh")
+  ;;        (chmod "~/.emacs.d/update-cacert.sh" 744)))
+  (error "File is not executable: ~/.emacs.d/update-cacert.sh"))
+(call-process "~/.emacs.d/update-cacert.sh")
+(setq-default gnutls-trustfiles (list "~/.emacs.d/cacert.pem"))
 
 ;; If GnuTLS is not embedded in Emacs, but accessed from a separate
 ;; installation, then the following lines are also required.
