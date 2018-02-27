@@ -1,12 +1,5 @@
 ;; Emacs configuration
 
-;; Modifier keys on macOS.
-(when (eq system-type 'darwin)
-  (setq-default mac-command-modifier 'meta
-                mac-option-modifier  'control
-                mac-control-modifier 'super
-                ns-function-modifier 'hyper))
-
 ;; Load greek letters shortcuts.
 (load "greek-letters")
 

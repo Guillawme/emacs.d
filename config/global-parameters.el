@@ -7,6 +7,13 @@
 (prefer-coding-system 'utf-8-unix)
 (setq-default default-input-method 'latin-1-prefix)
 
+;; Modifier keys on macOS.
+(when (eq system-type 'darwin)
+  (setq-default mac-command-modifier 'meta
+                mac-option-modifier  'control
+                mac-control-modifier 'super
+                ns-function-modifier 'hyper))
+
 ;; Interface customizations.
 (add-to-list 'default-frame-alist '(height . 53))
 (add-to-list 'default-frame-alist '(width . 100))
