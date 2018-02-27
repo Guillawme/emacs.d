@@ -25,6 +25,11 @@
   :bind
   (("C-c C-r" . ivy-resume)))
 
-(use-package ivy-hydra
+(use-package hydra
   :ensure t)
+
+(use-package ivy-hydra
+  :ensure t
+  :requires (ivy hydra)
+  :after (ivy hydra))
 
