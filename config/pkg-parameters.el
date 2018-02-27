@@ -29,8 +29,6 @@
 
 ;; Configure all other packages with `use-package'.
 (eval-when-compile
-  ;; Following line is not needed if use-package.el is in ~/.emacs.d
-  ;; (add-to-list 'load-path "<path where use-package is installed>")
   (require 'use-package))
 
 ;; Make sure `use-package' directives can use :bind and :diminish keywords.
