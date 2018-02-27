@@ -63,16 +63,24 @@
   (markdown-mode text-mode org-mode))
 
 ;; Spell-checking parameters.
-(use-package flyspell-mode
+(setq-default
+ ispell-program-name (executable-find "aspell")
+ ispell-library-directory "~/Library/Application Support/cocoAspell/aspell6-en-7.1-0/"
+ ispell-aspell-dict-dir "~/Library/Application Support/cocoAspell/aspell6-en-7.1-0/"
+ ispell-aspell-data-dir "~/Library/Application Support/cocoAspell/aspell6-en-7.1-0/"
+ ispell-personal-dictionary nil
+ ispell-dictionary "english"
+ ispell-extra-args '("--sug-mode=normal" "--lang=en_US"))
+
+(use-package flyspell-correct-ivy
+  :ensure t
   :config
-  (setq-default ispell-program-name "aspell"
-                ispell-dictionary "english"
-                ispell-extra-args '("--sug-mode=normal"))
+  (setq-default flyspell-correct-interface 'flyspell-correct-ivy)
   :bind
-  ;; Enable right-click to get spell-checking suggestions.
-  (:map flyspell-mouse-map
-        ([down-mouse-2] . flyspell-correct-word)
-        ([mouse-2] . undefined))
-  :hook
-  (markdown-mode text-mode org-mode))
+  (("C-." . flyspell-correct-word-generic)
+   ("C-;" . flyspell-correct-previous-word-generic)
+   ("C-'" . flyspell-correct-next-word-generic)
+   ;; Enable right-click to get spell-checking suggestions.
+   ([down-mouse-3] . flyspell-correct-word)
+   ([mouse-3] . undefined)))
 
