@@ -7,19 +7,31 @@
 (load "symbols")
 
 ;; Move by paragraph.
-(bind-key "M-p" 'backward-paragraph)
-(bind-key "M-n" 'forward-paragraph)
+(bind-keys*
+ ("M-p" . backward-paragraph)
+ ("M-n" . forward-paragraph))
 
 ;; Bind user-defined commands from ~/.emacs.d/config/my-functions.el to
 ;; convenient keyboard shortcuts.
-(bind-key "C-c i d" 'my-insert-date)
-(bind-key "C-c i t" 'my-insert-time)
-(bind-key "C-x 2" 'my-split-window-vertically)
-(bind-key "C-x 3" 'my-split-window-horizontally)
+(bind-keys* :prefix-map my-insert-functions
+            :prefix-docstring "Functions to automatically insert
+            current date and time at point."
+            :prefix "C-c i"
+            ("d" . my-insert-date)
+            ("t" . my-insert-time))
+(bind-keys* :prefix-map my-split-window-functions
+            :prefix-docstring "Smarter window-splitting functions."
+            :prefix "C-x"
+            ("2" . my-split-window-vertically)
+            ("3" . my-split-window-horizontally))
 
 ;; Bind useful commands to convenient keyboard shortcuts.
-(bind-key "C-c o" 'bury-buffer)
-(bind-key "C-c k" 'kill-this-buffer)
+(bind-keys* :prefix-map buffer-commands
+            :prefix-docstring "Useful buffer commands reachable
+            from easy-to-remember keybindings."
+            :prefix "C-c"
+            ("o" . bury-buffer)
+            ("k" . kill-this-buffer))
 
 ;; Open Emacs config directory. I rarely use this and might need the keybinding
 ;; for something else...
