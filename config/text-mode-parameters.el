@@ -34,6 +34,7 @@
     (format-time-string "%H:%M"))
   (add-to-list 'pandoc-directives '("date" . my-pandoc-current-date))
   (add-to-list 'pandoc-directives '("time" . my-pandoc-current-time))
+  (add-hook 'pandoc-mode-hook 'pandoc-load-default-settings)
   :hook
   (markdown-mode text-mode org-mode))
 
