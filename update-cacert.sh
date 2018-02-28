@@ -5,6 +5,7 @@
 # local one.
 
 curl \
+    --ssl-reqd \
     --time-cond $HOME/.emacs.d/cacert.pem \
     https://curl.haxx.se/ca/cacert.pem \
     --output $HOME/.emacs.d/cacert.pem
