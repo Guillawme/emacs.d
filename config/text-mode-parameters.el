@@ -25,6 +25,8 @@
 (use-package pandoc-mode
   :ensure t
   :config
+  ;; Load settings from `~/.emacs.d/pandoc-mode/default.pandoc'.
+  (add-hook 'pandoc-mode-hook 'pandoc-load-default-settings)
   ;; Functions to be used by pandoc-mode directives. See
   ;; http://joostkremers.github.io/pandoc-mode/#using--directives
   (defun my-pandoc-current-date (output-format &optional text)
@@ -34,9 +36,12 @@
     (format-time-string "%H:%M"))
   (add-to-list 'pandoc-directives '("date" . my-pandoc-current-date))
   (add-to-list 'pandoc-directives '("time" . my-pandoc-current-time))
-  (add-hook 'pandoc-mode-hook 'pandoc-load-default-settings)
   :hook
   (markdown-mode text-mode org-mode))
+
+;; For LaTeX files, make sure AucTeX is available.
+(use-package tex-mode
+  :ensure auctex)
 
 ;; Turn on visual-line-mode (useful to edit line break-sensitive
 ;; files for which auto-fill-mode should be turned off)
