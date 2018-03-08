@@ -1,6 +1,11 @@
 ;; Emacs configuration
 
-;; Useful parameters to write text.
+;; Useful parameters to read and write text.
+
+;; Epub reader.
+(use-package nov
+  :ensure t
+  :mode ("\\.epub\\'" . nov-mode))
 
 ;; Open new buffers in text-mode.
 (setq-default major-mode 'text-mode)
