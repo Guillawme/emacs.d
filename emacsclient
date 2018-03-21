@@ -1,0 +1,11 @@
+#! /usr/bin/env bash
+
+# Wrapper to emacsclient for macOS.
+
+# It will make sure Emacs is running before trying to use emacsclient. This will
+# only work if (server-start) is called during Emacs initialization. Place a
+# symlink to this file in a location listed in your PATH.
+
+which osascript > /dev/null 2>&1 && osascript -e 'tell application "Emacs" to activate'
+/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -c "$@"
+

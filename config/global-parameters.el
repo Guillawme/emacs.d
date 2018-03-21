@@ -2,6 +2,10 @@
 
 ;; Various useful global parameters.
 
+;; Always start server mode, to be able to use emacsclient from the command
+;; line.
+(server-start)
+
 ;; Language environment, coding system, input method.
 (set-language-environment "UTF-8")
 (prefer-coding-system 'utf-8-unix)
@@ -13,6 +17,9 @@
                 mac-option-modifier  'control
                 mac-control-modifier 'super
                 ns-function-modifier 'hyper))
+
+;; Do not create a new frame for files opened with the `open' system command.
+(setq-default ns-pop-up-frames nil)
 
 ;; Interface customizations.
 (add-to-list 'default-frame-alist '(height . 53))
