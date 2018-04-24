@@ -11,13 +11,15 @@
   (interactive)
   (insert (format-time-string "%X")))
 
-(defun my-split-window-vertically () "Split window vertically and display next buffer."
+(defun my-split-window-vertically () "Split window vertically, display next buffer and move point to new window."
   (interactive)
   (split-window-vertically)
-  (set-window-buffer (next-window) (other-buffer)))
+  (set-window-buffer (next-window) (other-buffer))
+  (other-window 1))
 
-(defun my-split-window-horizontally () "Split window horizontally and display next buffer."
+(defun my-split-window-horizontally () "Split window horizontally, display next buffer and move point to new window."
   (interactive)
   (split-window-horizontally)
-  (set-window-buffer (next-window) (other-buffer)))
+  (set-window-buffer (next-window) (other-buffer))
+  (other-window 1))
 
