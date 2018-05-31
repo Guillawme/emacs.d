@@ -24,6 +24,7 @@
 ;; Interface customizations.
 (add-to-list 'default-frame-alist '(height . 53))
 (add-to-list 'default-frame-alist '(width . 100))
+(add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
 (setq-default inhibit-startup-screen t
               scroll-preserve-screen-position t
               display-time-24hr-format t
@@ -37,6 +38,7 @@
 (tooltip-mode 1)
 (blink-cursor-mode -1)
 (fset 'yes-or-no-p 'y-or-n-p)
+(pixel-scroll-mode)
 
 ;; Allow killing of read-only text, and don't clutter the kill-ring
 ;; with duplicates.

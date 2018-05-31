@@ -3,7 +3,7 @@
 ;; Useful settings for programming modes.
 
 ;; Number lines and highlight current line.
-(use-package linum-mode
+(use-package display-line-numbers-mode
   :hook prog-mode)
 (use-package hl-line-mode
   :hook prog-mode)
