@@ -93,3 +93,6 @@
   (which-key-mode)
   (which-key-setup-side-window-right-bottom))
 
+;; Keep global eldoc mode enabled, but mask it from the modeline.
+(diminish 'eldoc-mode "")
+
