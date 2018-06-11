@@ -15,11 +15,13 @@
 (setq-default custom-file "~/.emacs.d/config/custom-parameters.el")
 
 ;; Load parameter files.
-;; Always load `https-parameters' first and `pkg-parameters' second. This is to
-;; make sure the rest of the configuration can install packages on demand, and
-;; that the package manager will never connect to repositories without using
-;; TLS.
+;; Always load `https-parameters' first, `gpg-parameters' second and
+;; `pkg-parameters' third. This is to make sure the rest of the configuration
+;; can install packages on demand, that the package manager will never connect
+;; to repositories without using TLS, and that it will be able to check
+;; signatures when they are available.
 (load "https-parameters")
+(load "gpg-parameters")
 (load "pkg-parameters")
 (load "global-parameters")
 (load "backup-parameters")

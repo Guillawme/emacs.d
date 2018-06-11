@@ -1,10 +1,5 @@
 ;; Emacs configuration
 
-;; Settings to make Emacs correctly find GnuPG. This will work only after
-;; `exec-path-from-shell' is loaded (this is done in `pkg-parameters.el').
-(setq-default epg-gpg-program "gpg2"
-              epg-gpg-home-directory "~/.gnupg/")
-
 ;; Settings to enforce verification of HTTPS connections.
 ;; Taken from <https://glyph.twistedmatrix.com/2015/11/editor-malware.html>.
 ;; This configuration only works if Emacs was built with GnuTLS
