@@ -10,6 +10,15 @@
   (("C-s" . counsel-grep-or-swiper)
    ("C-r" . counsel-grep-or-swiper)))
 
+;; Facilitated access to SSH hosts listed in `~/.ssh/config'.
+(use-package counsel-tramp
+  :ensure t
+  :config
+  (setq-default tramp-default-method "ssh")
+  :bind
+  (("C-c s" . counsel-tramp)
+   ("C-c q" . counsel-tramp-quit)))
+
 (use-package swiper
   :ensure t
   :bind
