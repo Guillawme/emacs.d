@@ -26,6 +26,7 @@
 (load "ivy-mode-parameters")
 (load "text-mode-parameters")
 (load "prog-mode-parameters")
+(load "magit-parameters")
 (load "custom-parameters")
 (load "my-functions")
 (load "eshell-parameters")
