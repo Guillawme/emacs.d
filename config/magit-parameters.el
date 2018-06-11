@@ -10,3 +10,6 @@
 
 (diminish 'auto-revert-mode "")
 
+;; Disable Emacs' built-in VC mode.
+(setq-default vc-handled-backends ())
+
