@@ -34,6 +34,16 @@
   :bind
   (("C-c C-r" . ivy-resume)))
 
+;; Nicer display for `ivy-switch-buffer'.
+(use-package ivy-rich
+  :ensure t
+  :config
+  (ivy-set-display-transformer 'ivy-switch-buffer
+                               'ivy-rich-switch-buffer-transformer)
+  (setq-default ivy-rich-path-style 'abbrev
+                ivy-virtual-abbreviate 'full
+                ivy-rich-switch-buffer-align-virtual-buffer t))
+
 (use-package hydra
   :ensure t)
 
