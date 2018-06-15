@@ -32,6 +32,17 @@
   (require 'use-package))
 (setq-default use-package-compute-statistics t)
 
+;; Automatically update packages when new versions are available (check every
+;; week), but ask confirmation instead of being invasive.
+(use-package auto-package-update
+  :ensure t
+  :config
+  (setq-default auto-package-update-prompt-before-update t
+                auto-package-update-interval 7
+                auto-package-update-delete-old-versions t
+                auto-package-update-hide-results nil)
+  (auto-package-update-maybe))
+
 ;; Make sure `use-package' directives can use :bind and :diminish keywords.
 (use-package bind-key
   :ensure t)
