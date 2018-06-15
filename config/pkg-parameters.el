@@ -30,6 +30,7 @@
 ;; Configure all other packages with `use-package'.
 (eval-when-compile
   (require 'use-package))
+(setq-default use-package-compute-statistics t)
 
 ;; Make sure `use-package' directives can use :bind and :diminish keywords.
 (use-package bind-key
