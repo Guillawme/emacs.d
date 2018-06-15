@@ -7,8 +7,8 @@
   :ensure t
   :mode ("\\.epub\\'" . nov-mode))
 
-;; Open new buffers in text-mode.
-(setq-default major-mode 'text-mode)
+;; Open new buffers in markdown-mode.
+(setq-default major-mode 'markdown-mode)
 
 ;; Because pandoc reads double spaces as hard line breaks, don't use double
 ;; spaces as sentence delimiters.
