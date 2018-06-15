@@ -7,6 +7,29 @@
   :ensure t
   :mode ("\\.epub\\'" . nov-mode))
 
+;; Use Emacs to write in webpage textareas.
+;; Browser extension required:
+;; https://addons.mozilla.org/en-US/firefox/addon/edit-with-emacs1
+;; Use Alt + Enter in a textarea to edit in Emacs, hit C-c C-c when done (with
+;; prefix argument C-u to cancel).
+(defun my-edit-server-done (prefix)
+  "Enhanced `edit-server-done' function. It will also hide Emacs when done."
+  (interactive "P")
+  (edit-server-done prefix)
+  (ns-hide-emacs t))
+
+(use-package edit-server
+  :ensure t
+  :init
+  (edit-server-start)
+  (global-edit-server-edit-mode 0)
+  :config
+  (setq-default edit-server-default-major-mode 'markdown-mode
+                edit-server-new-frame nil)
+  :bind
+  (:map edit-server-edit-mode-map
+   ("C-c C-c" . my-edit-server-done)))
+
 ;; Open new buffers in markdown-mode.
 (setq-default major-mode 'markdown-mode)
 
