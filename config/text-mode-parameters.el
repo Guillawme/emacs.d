@@ -83,12 +83,11 @@
 (use-package auto-fill-mode
   :init
   (setq-default fill-column 80)
-  :config
-  (add-hook 'fill-nobreak-predicate 'fill-french-nobreak-p)
-  (add-hook 'fill-nobreak-predicate 'fill-single-word-nobreak-p)
-  (add-hook 'fill-nobreak-predicate 'fill-single-char-nobreak-p)
   :hook
-  (markdown-mode text-mode org-mode tex-mode))
+  ((markdown-mode text-mode org-mode tex-mode)
+   (fill-nobreak-predicate . fill-french-nobreak-p)
+   (fill-nobreak-predicate . fill-single-word-nobreak-p)
+   (fill-nobreak-predicate . fill-single-char-nobreak-p)))
 
 ;; Spell-checking parameters.
 (setq-default
