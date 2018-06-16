@@ -57,7 +57,7 @@
   (add-to-list 'pandoc-directives '("time" . my-pandoc-current-time))
   :hook
   (;; Activate pandoc-mode on top of common text modes.
-   (markdown-mode text-mode org-mode)
+   (markdown-mode text-mode org-mode tex-mode)
    ;; Load settings from `~/.emacs.d/pandoc-mode/default.pandoc'.
    (pandoc-mode . pandoc-load-default-settings)))
 
@@ -75,7 +75,7 @@
   :custom
   (wc-goal-modeline-format "WC[%tw]")
   :hook
-  (markdown-mode text-mode org-mode))
+  (markdown-mode text-mode org-mode tex-mode))
 
 ;; Turn on auto-fill-mode and set useful parameters for
 ;; auto-fill-mode. Use it automatically when working in text-mode
@@ -88,7 +88,7 @@
   (add-hook 'fill-nobreak-predicate 'fill-single-word-nobreak-p)
   (add-hook 'fill-nobreak-predicate 'fill-single-char-nobreak-p)
   :hook
-  (markdown-mode text-mode org-mode))
+  (markdown-mode text-mode org-mode tex-mode))
 
 ;; Spell-checking parameters.
 (setq-default
