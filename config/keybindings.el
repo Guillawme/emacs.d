@@ -8,8 +8,8 @@
 
 ;; Move by paragraph.
 (bind-keys*
- ("M-p" . backward-paragraph)
- ("M-n" . forward-paragraph))
+ ("M-[" . backward-paragraph)
+ ("M-]" . forward-paragraph))
 
 ;; Bind user-defined commands from ~/.emacs.d/config/my-functions.el to
 ;; convenient keyboard shortcuts.

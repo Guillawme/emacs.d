@@ -40,14 +40,7 @@
 ;; Turn on  markdown-mode when opening .md files.
 (use-package markdown-mode
   :ensure t
-  :mode "\\.md\\'"
-  :config
-  (unbind-key "M-p" markdown-mode-map)
-  (unbind-key "M-n" markdown-mode-map)
-  :bind
-  (:map markdown-mode-map
-        ("C-c l n" . markdown-next-link)
-        ("C-c l p" . markdown-previous-link)))
+  :mode "\\.md\\'")
 
 ;; Turn on pandoc-mode when working in text-mode buffers.
 (use-package pandoc-mode
