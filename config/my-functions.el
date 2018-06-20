@@ -3,6 +3,11 @@
 ;; Some useful commands to be called by keybindings set in
 ;; ~/.emacs.d/config/keybindings.el
 
+(defun my-reload-config ()
+  "Reload `user-init-file'."
+  (interactive)
+  (load user-init-file))
+
 (defun my-insert-date ()
   "Insert current date at point."
   (interactive)

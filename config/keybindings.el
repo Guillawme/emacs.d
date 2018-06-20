@@ -13,6 +13,7 @@
 
 ;; Bind user-defined commands from ~/.emacs.d/config/my-functions.el to
 ;; convenient keyboard shortcuts.
+(bind-key "C-c z" 'my-reload-config)
 (bind-keys* :prefix-map my-insert-functions
             :prefix-docstring "Functions to automatically insert
             current date and time at point."
