@@ -6,6 +6,18 @@
 ;; line.
 (server-start)
 
+;; Store package configuration and data files cleanly under `~/.emacs.d/etc' and
+;; `~/.emacs.d/var'.
+(use-package no-littering
+  :ensure t
+  :init
+  (require 'no-littering)
+  :config
+  ;; Do not list these files in recently opened files.
+  (require 'recentf)
+  (add-to-list 'recentf-exclude no-littering-var-directory)
+  (add-to-list 'recentf-exclude no-littering-etc-directory))
+
 ;; Language environment, coding system, input method.
 (set-language-environment "UTF-8")
 (prefer-coding-system 'utf-8-unix)
