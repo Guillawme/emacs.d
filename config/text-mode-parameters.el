@@ -89,6 +89,28 @@
    (fill-nobreak-predicate . fill-single-word-nobreak-p)
    (fill-nobreak-predicate . fill-single-char-nobreak-p)))
 
+;; Bibliography management.
+(use-package ivy-bibtex
+  :ensure t
+  :bind
+  (("C-c r" . ivy-bibtex))
+  :config
+  (setq-default bibtex-completion-bibliography '("~/Labo/zotero-library.bib")
+                bibtex-completion-pdf-field "file"
+                bibtex-completion-notes-path "~/Labo/zotero-notes"
+                bibtex-completion-notes-extension ".md"
+                bibtex-completion-find-additional-pdfs t
+                bibtex-completion-format-citation-functions
+                '((org-mode      . bibtex-completion-format-citation-org-link-to-PDF)
+                  (latex-mode    . bibtex-completion-format-citation-cite)
+                  (markdown-mode . bibtex-completion-format-citation-pandoc-citeproc)
+                  (default       . bibtex-completion-format-citation-default))
+                ivy-bibtex-default-action 'ivy-bibtex-insert-citation
+                ;; Use system default PDF viewer
+                bibtex-completion-pdf-open-function
+                (lambda (fpath)
+                  (call-process "open" nil 0 nil fpath))))
+
 ;; Spell-checking parameters.
 (setq-default
  ispell-program-name (executable-find "aspell")
