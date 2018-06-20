@@ -14,10 +14,21 @@
   (add-hook 'after-save-hook
             'executable-make-buffer-file-executable-if-script-p))
 
+;; Tab completion.
+(setq-default tab-always-indent 'complete)
+(use-package company
+  :ensure t
+  :hook
+  (prog-mode . company-mode))
+
 ;; Use ESS for R, and polymode for Rmd files.
 (use-package ess
   :ensure t
-  :mode "\\.R'")
+  :mode "\\.R'"
+  :config
+  (setq-default ess-use-company t
+                ess-use-auto-complete nil
+                ess-use-ido nil))
 
 (use-package polymode
   :ensure t
