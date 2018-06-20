@@ -2,28 +2,6 @@
 
 ;; Parameters for Ivy autocompletion and related tools.
 
-(use-package counsel
-  :ensure t
-  :config
-  (setq-default enable-recursive-minibuffers t)
-  :bind
-  (("C-s" . counsel-grep-or-swiper)
-   ("C-r" . counsel-grep-or-swiper)))
-
-;; Facilitated access to SSH hosts listed in `~/.ssh/config'.
-(use-package counsel-tramp
-  :ensure t
-  :config
-  (setq-default tramp-default-method "ssh")
-  :bind
-  (("C-c s" . counsel-tramp)
-   ("C-c q" . counsel-tramp-quit)))
-
-(use-package swiper
-  :ensure t
-  :bind
-  (("C-M-s" . swiper-all)))
-
 (use-package ivy
   :ensure t
   :diminish ivy-mode
@@ -44,11 +22,32 @@
                 ivy-virtual-abbreviate 'full
                 ivy-rich-switch-buffer-align-virtual-buffer t))
 
-(use-package hydra
-  :ensure t)
-
+;; More keybindings for Ivy.
 (use-package ivy-hydra
   :ensure t
-  :requires (ivy hydra)
   :after (ivy hydra))
+
+;; Search with Ivy.
+(use-package swiper
+  :ensure t
+  :bind
+  (("C-M-s" . swiper-all)))
+
+;; More Ivy-based commands.
+(use-package counsel
+  :ensure t
+  :config
+  (setq-default enable-recursive-minibuffers t)
+  :bind
+  (("C-s" . counsel-grep-or-swiper)
+   ("C-r" . counsel-grep-or-swiper)))
+
+;; Facilitated access to SSH hosts listed in `~/.ssh/config'.
+(use-package counsel-tramp
+  :ensure t
+  :config
+  (setq-default tramp-default-method "ssh")
+  :bind
+  (("C-c s" . counsel-tramp)
+   ("C-c q" . counsel-tramp-quit)))
 
