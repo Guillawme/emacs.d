@@ -1,4 +1,3 @@
-
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -6,7 +5,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (no-littering polymode ess edit-server magit which-key wc-goal-mode use-package pandoc-mode osx-trash org-plus-contrib markdown-mode ivy-hydra flyspell-correct-ivy exec-path-from-shell diminish counsel))))
+    (org-plus-contrib magit polymode ess company flyspell-correct-ivy ivy-bibtex wc-goal-mode auctex pandoc-mode markdown-mode edit-server nov counsel-tramp counsel swiper ivy-hydra ivy-rich ivy which-key osx-trash no-littering exec-path-from-shell diminish auto-package-update use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
