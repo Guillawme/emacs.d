@@ -28,7 +28,10 @@
   :config
   (setq-default ess-use-company t
                 ess-use-auto-complete nil
-                ess-use-ido nil))
+                ess-use-ido nil
+                ess-use-flymake nil
+                ess-use-R-completion t
+                ess-use-eldoc t))
 
 (use-package polymode
   :ensure t
