@@ -37,3 +37,7 @@
   :ensure t
   :mode ("\\.Rmd'" . poly-markdown+r-mode))
 
+;; Syntax checking.
+(use-package flycheck
+  :ensure t)
+
