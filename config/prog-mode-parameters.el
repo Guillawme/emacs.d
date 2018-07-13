@@ -14,6 +14,16 @@
   (add-hook 'after-save-hook
             'executable-make-buffer-file-executable-if-script-p))
 
+;; Use YAML mode for .yml files
+(use-package yaml-mode
+  :ensure t
+  :mode "\\.yml\\'")
+
+;; Use specific mode for .gitlab-ci.yml files
+(use-package gitlab-ci-mode
+  :ensure t
+  :mode "\\.gitlab-ci.yml\\'")
+
 ;; Tab completion.
 (setq-default tab-always-indent 'complete)
 (use-package company
