@@ -48,6 +48,6 @@
   :config
   (setq-default tramp-default-method "ssh")
   :bind
-  (("C-c s" . counsel-tramp)
-   ("C-c q" . counsel-tramp-quit)))
+  (("C-c C-f" . counsel-tramp)
+   ("C-c C-q" . counsel-tramp-quit)))
 
