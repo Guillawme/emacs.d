@@ -36,6 +36,7 @@
 ;; More Ivy-based commands.
 (use-package counsel
   :ensure t
+  :diminish
   :config
   (setq-default enable-recursive-minibuffers t)
   :bind
