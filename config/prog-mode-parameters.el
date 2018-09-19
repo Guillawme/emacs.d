@@ -24,30 +24,3 @@
   :ensure t
   :mode "\\.gitlab-ci.yml\\'")
 
-;; Tab completion.
-(setq-default tab-always-indent 'complete)
-(use-package company
-  :ensure t
-  :hook
-  (prog-mode . company-mode))
-
-;; Use ESS for R, and polymode for Rmd files.
-(use-package ess
-  :ensure t
-  :mode "\\.R'"
-  :config
-  (setq-default ess-use-company t
-                ess-use-auto-complete nil
-                ess-use-ido nil
-                ess-use-flymake nil
-                ess-use-R-completion t
-                ess-use-eldoc t))
-
-(use-package polymode
-  :ensure t
-  :mode ("\\.Rmd'" . poly-markdown+r-mode))
-
-;; Syntax checking.
-(use-package flycheck
-  :ensure t)
-
