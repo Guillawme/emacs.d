@@ -52,6 +52,16 @@
 (fset 'yes-or-no-p 'y-or-n-p)
 (pixel-scroll-mode)
 
+;; Theme
+(use-package doom-themes
+  :ensure t
+  :config
+  (load-theme 'doom-nord-light t)
+  (setq-default doom-themes-enable-bold t
+                doom-themes-enable-italic t)
+  (doom-themes-visual-bell-config)
+  (doom-themes-org-config))
+
 ;; Allow killing of read-only text, and don't clutter the kill-ring
 ;; with duplicates.
 (setq-default kill-read-only-ok t
