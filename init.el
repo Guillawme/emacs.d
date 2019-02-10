@@ -2,17 +2,19 @@
 
 ;; Init file in charge of loading everything else.
 ;; All actual configuration files are stored in "~/.emacs.d/config".
-(add-to-list 'load-path "~/.emacs.d/config")
+(defvar user-emacs-config-dir (concat user-emacs-directory "config")
+  "Path under `user-emacs-directory' where to store user's configuration files.")
+(add-to-list 'load-path user-emacs-config-dir)
 
 ;; This needs to come first, otherwise `package.el' will complain.
 (package-initialize)
 
 ;; Set user identity (full name and email address), if it is defined.
-(when (file-exists-p "~/.emacs.d/config/user-identity.el")
+(when (file-exists-p (concat user-emacs-config-dir "/user-identity.el"))
   (load "user-identity"))
 
 ;; File to record paremeters set through the `customize' utility.
-(setq-default custom-file "~/.emacs.d/config/custom-parameters.el")
+(setq-default custom-file (concat user-emacs-config-dir "/custom-parameters.el"))
 
 ;; Load parameter files.
 ;; Always load `https-parameters' first, `gpg-parameters' second and
