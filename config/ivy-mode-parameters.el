@@ -11,6 +11,7 @@
                 ivy-count-format "(%d/%d) ")
   :bind
   (("C-c C-r" . ivy-resume)))
+(ivy-mode 1)
 
 ;; Nicer display for `ivy-switch-buffer'.
 (use-package ivy-rich
@@ -19,8 +20,8 @@
   :config
   (setq-default ivy-rich-path-style 'abbrev
                 ivy-virtual-abbreviate 'full
-                ivy-rich-switch-buffer-align-virtual-buffer t)
-  (ivy-rich-mode 1))
+                ivy-rich-switch-buffer-align-virtual-buffer t))
+(ivy-rich-mode 1)
 
 ;; More keybindings for Ivy.
 (use-package ivy-hydra
@@ -42,6 +43,7 @@
   :bind
   (("C-s" . counsel-grep-or-swiper)
    ("C-r" . counsel-grep-or-swiper)))
+(counsel-mode 1)
 
 ;; Facilitated access to SSH hosts listed in `~/.ssh/config'.
 (use-package counsel-tramp
