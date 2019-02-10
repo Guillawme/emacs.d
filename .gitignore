@@ -3,8 +3,9 @@ user-identity.el
 
 # Files automatically generated or downloaded
 cacert.pem
-elpa/*
-var/*
+elpa/
+var/
+.last-package-update-day
 
 # Compiled
 *.elc
