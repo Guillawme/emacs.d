@@ -6,7 +6,7 @@
 ;; the current window.
 (setq-default display-buffer-alist '(("\\`\\*e?shell" display-buffer-pop-up-window)))
 
-;; Set eshell data directory and alias file.
-(setq-default eshell-directory-name "~/.emacs.d/eshell"
-              eshell-aliases-file "~/.emacs.d/eshell/aliases")
+;; Set eshell alias file (its data directory follows the no-littering
+;; convention, stored in ~/.emacs.d/var).
+(setq-default eshell-aliases-file (concat eshell-directory-name "aliases"))
 
