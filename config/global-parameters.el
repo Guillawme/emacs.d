@@ -118,3 +118,9 @@
 ;; Keep global eldoc mode enabled, but mask it from the modeline.
 (diminish 'eldoc-mode "")
 
+;; Use undo-tree-mode globally
+(use-package undo-tree
+  :ensure t
+  :diminish)
+(global-undo-tree-mode 1)
+
