@@ -36,4 +36,5 @@
 (load "eshell-parameters")
 (load "keybindings")
 (load "org-mode-parameters")
+(load "evil-mode-parameters")
 
