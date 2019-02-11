@@ -38,7 +38,7 @@
             reachable from easy-to-remember keybindings."
             :prefix "C-c s"
             ("d" . ispell-change-dictionary)
-            ("s" . flyspell-buffer))
+            ("s" . my-flyspell-buffer))
 
 ;; Open Emacs config directory. I rarely use this and might need the keybinding
 ;; for something else...

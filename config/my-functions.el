@@ -32,3 +32,11 @@
   (set-window-buffer (next-window) (other-buffer))
   (other-window 1))
 
+(defun my-flyspell-buffer ()
+  "Spellcheck current buffer after checking whether flyspell-mode is on."
+  (interactive)
+  (if (featurep 'flyspell)
+      (nil)
+    (flyspell-mode))
+  (flyspell-buffer))
+
