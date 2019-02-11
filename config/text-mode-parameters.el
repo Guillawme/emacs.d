@@ -112,15 +112,29 @@
                   (call-process "open" nil 0 nil fpath))))
 
 ;; Spell-checking parameters.
-(setq-default
- ispell-program-name (executable-find "aspell")
- ispell-library-directory "~/Library/Application Support/cocoAspell/aspell6-en-7.1-0/"
- ispell-aspell-dict-dir "~/Library/Application Support/cocoAspell/aspell6-en-7.1-0/"
- ispell-aspell-data-dir "~/Library/Application Support/cocoAspell/aspell6-en-7.1-0/"
- ispell-personal-dictionary nil
- ispell-dictionary "english"
- ispell-extra-args '("--sug-mode=normal" "--lang=en_US"))
-
+(defvar user-spelling-dir "~/Library/Spelling"
+  "Directory containing hunspell dictionary files.")
+(setq-default ispell-program-name (executable-find "hunspell")
+ ispell-library-directory (concat user-spelling-dir "/Spelling")
+ ispell-personal-dictionary (concat user-spelling-dir "/Spelling/LocalDictionary")
+ ispell-dictionary "english")
+(defvar ispell-dictionary-alist ())
+(add-to-list 'ispell-dictionary-alist '("french"
+                                        "[[:alpha:]]"
+                                        "[^[:alpha:]]"
+                                        "[']"
+                                        t
+                                        ("-d" "fr_FR")
+                                        nil
+                                        utf-8))
+(add-to-list 'ispell-dictionary-alist '("english"
+                                        "[[:alpha:]]"
+                                        "[^[:alpha:]]"
+                                        "[']"
+                                        t
+                                        ("-d" "en_US")
+                                        nil
+                                        utf-8))
 (use-package flyspell-correct-ivy
   :ensure t
   :config

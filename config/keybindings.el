@@ -33,6 +33,12 @@
             :prefix "C-c"
             ("o" . bury-buffer)
             ("k" . kill-this-buffer))
+(bind-keys* :prefix-map spellchecking-commands
+            :prefix-docstring "Useful spellchecking commands
+            reachable from easy-to-remember keybindings."
+            :prefix "C-c s"
+            ("d" . ispell-change-dictionary)
+            ("s" . flyspell-buffer))
 
 ;; Open Emacs config directory. I rarely use this and might need the keybinding
 ;; for something else...
