@@ -7,7 +7,13 @@
 ;; allow-loopback-pinentry
 ;; This will work only after `exec-path-from-shell' is loaded (this is done in
 ;; `pkg-parameters.el').
-(setq-default epg-gpg-program "gpg2"
+(setenv "GPG_AGENT_INFO" "~/.gnupg/S.gpg-agent")
+(setenv "SSH_AUTH_SOCK" "~/.gnupg/S.gpg-agent.ssh")
+(setq-default epg-gpg-program "gpg"
               epg-gpg-home-directory "~/.gnupg/"
               epa-pinentry-mode 'loopback)
+
+(use-package pinentry
+  :ensure t)
+(pinentry-start)
 

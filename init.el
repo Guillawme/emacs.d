@@ -23,8 +23,8 @@
 ;; to repositories without using TLS, and that it will be able to check
 ;; signatures when they are available.
 (load "https-parameters")
-(load "gpg-parameters")
 (load "pkg-parameters")
+(load "gpg-parameters")
 (load "global-parameters")
 (load "backup-parameters")
 (load "ivy-mode-parameters")
