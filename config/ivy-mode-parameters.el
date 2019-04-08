@@ -13,21 +13,6 @@
   (("C-c C-r" . ivy-resume)))
 (ivy-mode 1)
 
-;; Nicer display for `ivy-switch-buffer'.
-(use-package ivy-rich
-  :ensure t
-  :after (ivy)
-  :config
-  (setq-default ivy-rich-path-style 'abbrev
-                ivy-virtual-abbreviate 'full
-                ivy-rich-switch-buffer-align-virtual-buffer t))
-(ivy-rich-mode 1)
-
-;; More keybindings for Ivy.
-(use-package ivy-hydra
-  :ensure t
-  :after (ivy hydra))
-
 ;; Search with Ivy.
 (use-package swiper
   :ensure t
@@ -44,6 +29,21 @@
   (("C-s" . counsel-grep-or-swiper)
    ("C-r" . counsel-grep-or-swiper)))
 (counsel-mode 1)
+
+;; Nicer display for `ivy-switch-buffer'.
+(use-package ivy-rich
+  :ensure t
+  :after (ivy counsel)
+  :config
+  (setq-default ivy-rich-path-style 'abbrev
+                ivy-virtual-abbreviate 'full
+                ivy-rich-switch-buffer-align-virtual-buffer t))
+(ivy-rich-mode 1)
+
+;; More keybindings for Ivy.
+(use-package ivy-hydra
+  :ensure t
+  :after (ivy hydra))
 
 ;; Facilitated access to SSH hosts listed in `~/.ssh/config'.
 (use-package counsel-tramp
