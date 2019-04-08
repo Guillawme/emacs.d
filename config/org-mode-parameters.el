@@ -30,3 +30,12 @@
                                                 ("*" . "+"))
                 org-list-indent-offset 2))
 
+;; Settings for org-journal.
+(use-package org-journal
+  :ensure t
+  :custom
+  (org-journal-dir "~/org/journal" "Path to journal files.")
+  (org-journal-date-format "%Y-%m-%d" "Date format.")
+  (org-journal-file-format "%Y-%m-%d.org" "Filename format.")
+  (org-journal-find-file 'find-file "Open journal files in current window."))
+
