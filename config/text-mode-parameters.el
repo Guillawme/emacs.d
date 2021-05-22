@@ -37,7 +37,7 @@
 ;; spaces as sentence delimiters.
 (setq-default sentence-end-double-space nil)
 
-;; Turn on  markdown-mode when opening .md files.
+;; Turn on markdown-mode when opening .md files.
 (use-package markdown-mode
   :ensure t
   :mode "\\.md\\'")
