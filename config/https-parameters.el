@@ -28,7 +28,7 @@
     (message "File not found or not executable: ~/.emacs.d/update-cacert.sh")
     (message "Falling back on system certificate bundle: /private/etc/ssl/cert.pem")))
 
-(setq-default gnutls-trustfiles (list ;"~/.emacs.d/cacert.pem"
+(setq-default gnutls-trustfiles (list "~/.emacs.d/cacert.pem"
                                       "/private/etc/ssl/cert.pem"))
 
 ;; If GnuTLS is not embedded in Emacs, but accessed from a separate
