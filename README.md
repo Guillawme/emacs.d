@@ -1,7 +1,6 @@
 # Emacs configuration
 
-This GitHub repository is a mirror. The [original repository][framagit-repo] is
-hosted on Framagit.
+**This is not maintained anymore ([I now use doom][doom]).**
 
 This configuration was put together mostly by reading Emacs' built-in
 documentation plus some online research; I tried as much as possible to use only
@@ -25,5 +24,5 @@ Feel free to reuse parts or all of it. You can add a file called
 
 Comments to improve this configuration in any way are really welcome.
 
+[doom]: https://github.com/Guillawme/doom.d
 
-[framagit-repo]: https://framagit.org/Guillawme/emacs.d
